@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TPG | Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      {% if messages %}
+        {% for message in messages %}
+            <center><h4 style="color: firebrick;">{{ message }}</h4></center>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">{% csrf_token %}
+
+        <div class="txt_field">
+          <input type="text" required name="uname">
+          <span></span>
+          <label>Username</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" required name="pass">
+          <span></span>
+          <label>Password</label>
+        </div>
+
+        <!-- <div class="pass">Forgot Password?</div> -->
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          Not a member? <a href="{% url 'register' %}">Signup</a>
+          <p>Forgot your Password? <a href="{% url 'reset_password' %}">Reset Password</a></p> 
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

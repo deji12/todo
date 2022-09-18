@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TPG | Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Register</h1>
+      {% if messages %}
+        {% for message in messages %}
+            <center><h4 style="color: firebrick;">{{ message }}</h4></center>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">{% csrf_token %}
+      
+        <div class="txt_field">
+            <input type="text", name="fname" required>
+            <span></span>
+            <label>First Name</label>
+          </div>
+
+          <div class="txt_field">
+            <input type="text" name="lname" required>
+            <span></span>
+            <label>Last Name</label>
+          </div>
+
+        <div class="txt_field">
+          <input type="text" required name="uname">
+          <span></span>
+          <label>Username</label>
+        </div>
+
+        <div class="txt_field">
+            <input type="email" required name="email">
+            <span></span>
+            <label>Email</label>
+          </div>
+
+        <div class="txt_field">
+          <input type="password" required name="pass">
+          <span></span>
+          <label>Password</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" required name="pass2">
+          <span></span>
+          <label>Confirm Password</label>
+        </div>
+    
+
+        <!-- <div class="pass">Forgot Password?</div> -->
+        <input type="submit" value="Register">
+        <div class="signup_link">
+          Already have an account? <a href="{% url 'login' %}">Login</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
