@@ -15,7 +15,8 @@
             <center><h4 style="color: firebrick;">{{ message }}</h4></center>
         {% endfor %}
       {% endif %}
-      <form method="POST">{% csrf_token %}
+      <form method="POST">
+        {% csrf_token %}
 
         <div class="txt_field">
           <input type="text" required name="uname">
