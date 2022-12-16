@@ -28,6 +28,38 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+   "https://web-production-bae4.up.railway.app/",
+   "https://web-production-bae4.up.railway.app",
+   "https://web-production-bae4.up.railway.app/admin",
+   "https://web-production-bae4.up.railway.app/admin/"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000",
+   "https://web-production-bae4.up.railway.app/",
+    "https://web-production-bae4.up.railway.app",
+    "https://web-production-bae4.up.railway.app/admin",
+    "https://web-production-bae4.up.railway.app/admin/",
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 # Application definition
 
@@ -75,23 +107,23 @@ WSGI_APPLICATION = 'tdl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'daeboneutf0urv',
-        'USER': 'bzdltbhmouwjkp',
-        'PASSWORD': '8b75af30eda4f9ce3e1d5f2f15ce532196e11be65243589249858cfb4a72fe58',
-        'HOST': 'ec2-54-208-139-247.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'daeboneutf0urv',
+#         'USER': 'bzdltbhmouwjkp',
+#         'PASSWORD': '8b75af30eda4f9ce3e1d5f2f15ce532196e11be65243589249858cfb4a72fe58',
+#         'HOST': 'ec2-54-208-139-247.compute-1.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
 
 
 
