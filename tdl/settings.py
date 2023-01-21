@@ -61,7 +61,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 
-# Application definition
+# Application definitiong
 
 INSTALLED_APPS = [
     'django.contrib.admin',
