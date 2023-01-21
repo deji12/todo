@@ -29,19 +29,19 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-   "https://web-production-bae4.up.railway.app/",
-   "https://web-production-bae4.up.railway.app",
-   "https://web-production-bae4.up.railway.app/admin",
-   "https://web-production-bae4.up.railway.app/admin/"
+#     "http://127.0.0.1:8000",
+#    "https://web-production-bae4.up.railway.app/",
+#    "https://web-production-bae4.up.railway.app",
+#    "https://web-production-bae4.up.railway.app/admin",
+#    "https://web-production-bae4.up.railway.app/admin/"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
-   "https://web-production-bae4.up.railway.app/",
-    "https://web-production-bae4.up.railway.app",
-    "https://web-production-bae4.up.railway.app/admin",
-    "https://web-production-bae4.up.railway.app/admin/",
+   "https://todorail-production.up.railway.app/",
+    "https://todorail-production.up.railway.app",
+    "https://todorail-production.up.railway.app/admin",
+    "https://todorail-production.up.railway.app/admin/",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -70,10 +70,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'td'
+    'td',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
